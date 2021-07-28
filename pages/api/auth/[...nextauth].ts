@@ -126,5 +126,6 @@ const options = {
     session: {
         jwt: true
     },
-    callbacks
+    callbacks,
+    NEXTAUTH_URL: process.env.NEXTAUTH_URL
 };
