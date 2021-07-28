@@ -127,6 +127,5 @@ const options = {
         jwt: true
     },
     callbacks,
-    // just for new deploy
     NEXTAUTH_URL: process.env.NEXTAUTH_URL
 };
