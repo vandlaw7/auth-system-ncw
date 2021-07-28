@@ -55,7 +55,7 @@ const handleClick = async () => {
     // 지금까지는 그냥 일반적인 체크용
 
     const chain = "ethereum";
-    const response = await fetch(`http://auth-system-ncw-1qa8xp8hj-vandlaw7.vercel.app/api/wallet`, {
+    const response = await fetch(`https://auth-system-ncw.vercel.app/api/wallet`, {
         body: JSON.stringify({publicAddress, chain}),
         headers: {
             'Content-Type': 'application/json',
@@ -71,13 +71,13 @@ const handleClick = async () => {
         // handleAuthenticate({publicAddress, signature})
 
         signIn('credentials',
-            {publicAddress, signature, nonce, callbackUrl: `http://auth-system-ncw-1qa8xp8hj-vandlaw7.vercel.app/`})
+            {publicAddress, signature, nonce})
     } else {
         // 이 경우 메타마스크로 처음 로그인해서 바로 유저를 생성해서 로그인함.
         const {user_id} = response_json;
         console.log("user_id in frontend", user_id)
         signIn('credentials',
-            {user_id, callbackUrl: `http://auth-system-ncw-1qa8xp8hj-vandlaw7.vercel.app/`})
+            {user_id})
     }
 };
 
