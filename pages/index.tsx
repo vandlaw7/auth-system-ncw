@@ -50,19 +50,19 @@ const Blog: React.FC<Props> = (props) => {
     console.log(session);
 
 
-    useEffect(() => {
-        async function listenMMAccount() {
-            window.ethereum.on("accountsChanged", async function() {
-                // Time to reload your interface with accounts[0]!
-                accounts = window.ethereum.send('eth_requestAccounts');
-                // accounts = await web3.eth.getAccounts();
-
-                alert("Your metamask account is changed");
-                console.log(accounts);
-            });
-        }
-        listenMMAccount();
-    }, []);
+    // useEffect(() => {
+    //     async function listenMMAccount() {
+    //         window.ethereum.on("accountsChanged", async function() {
+    //             // Time to reload your interface with accounts[0]!
+    //             accounts = window.ethereum.send('eth_requestAccounts');
+    //             // accounts = await web3.eth.getAccounts();
+    //
+    //             alert("Your metamask account is changed");
+    //             console.log(accounts);
+    //         });
+    //     }
+    //     listenMMAccount();
+    // }, []);
 
     const metamaskConnect = async () => {
         const ethereum = window.ethereum
