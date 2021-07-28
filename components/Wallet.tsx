@@ -10,7 +10,7 @@ export type WalletProps = {
 
 
 async function removeWallet(id: String): Promise<void> {
-    const response = await fetch(`http://auth-system-ncw.vercel.app/api/wallet/${id}`, {
+    const response = await fetch(`http://auth-system-ncw-1qa8xp8hj-vandlaw7.vercel.app/api/wallet/${id}`, {
         method: 'DELETE',
     });
     const response_json = await response.json()
