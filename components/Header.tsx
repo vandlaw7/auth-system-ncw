@@ -71,13 +71,14 @@ const handleClick = async () => {
         // handleAuthenticate({publicAddress, signature})
 
         signIn('credentials',
-            {publicAddress, signature, nonce})
+            {publicAddress, signature, nonce});
+        Router.push('/')
     } else {
         // 이 경우 메타마스크로 처음 로그인해서 바로 유저를 생성해서 로그인함.
         const {user_id} = response_json;
-        console.log("user_id in frontend", user_id)
-        signIn('credentials',
-            {user_id})
+        console.log("user_id in frontend", user_id);
+        signIn('credentials', {user_id});
+        Router.push('/')
     }
 };
 
